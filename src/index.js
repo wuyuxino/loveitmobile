@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Parse from 'parse'
 import './index.css';
-import App from './App';
+import RouterJump from './router'
 import * as serviceWorker from './serviceWorker';
+
+function setup() {
+	Parse.initialize('psone')
+	Parse.serverURL = 'http://106.13.63.7:10010/parse'
+}
+
+setup()
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RouterJump />
   </React.StrictMode>,
   document.getElementById('root')
 );
